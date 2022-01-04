@@ -1,0 +1,2 @@
+module SubCategorysHelper
+end

@@ -1,3 +1,3 @@
 class SubCategory < ApplicationRecord
-  has_one :category
+  belongs_to :category, optional: true
 end
