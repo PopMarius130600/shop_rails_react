@@ -12,7 +12,7 @@ class Home extends Component {
   componentWillMount() {
     console.log("category");
 
-    axios.get("http://localhost:3000/categorys").then( response => {
+    axios.get("http://localhost:3000/sub_categorys").then( response => {
       console.log(response);
       const data = response.data;
       this.setState({

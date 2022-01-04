@@ -5,12 +5,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+// import store from './store';
+
 import Home from './components/home/Home'
+import Search from './components/search/Search'
+import PageNotFound from './components/page_not_found/PageNotFound'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Home/>,
-    
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/categorys" element={<Search />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </Router>,
     document.body.appendChild(document.createElement('div')),
   )
 })

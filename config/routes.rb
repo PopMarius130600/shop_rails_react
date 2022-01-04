@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :categorys
+  # resources :categorys
   resources :sub_categorys
   get '*path', to: 'pages#index', via: :all
   root 'pages#index'
