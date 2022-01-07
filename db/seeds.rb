@@ -26,3 +26,23 @@ SubCategory.create!(
   name: "Jeans",
   category_id: Category.first.id
 )
+
+Item.create!(
+  name: "Blugi",
+  description: "Calitate superioare sefule",
+  size: "M",
+  color: "Blue",
+  price: "126",
+  stock: "1000",
+  gender: "M"
+)
+
+Item.create!(
+  name: "Geaca",
+  description: "Calitate superioare sefule",
+  size: "S",
+  color: "Black",
+  price: "200",
+  stock: "1000",
+  gender: "F"
+  )

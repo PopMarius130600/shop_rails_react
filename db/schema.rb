@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2022_01_03_180304) do
     t.float "price"
     t.integer "stock"
     t.string "gender"
+    t.integer "brand_id"
+    t.integer "sub_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
