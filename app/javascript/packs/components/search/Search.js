@@ -12,7 +12,7 @@ class Home extends Component {
   componentWillMount() {
     console.log("category");
 
-    axios.get("http://localhost:3000/sub_categorys").then( response => {
+    axios.get("/api/v1/sub_categorys").then( response => {
       console.log(response);
       const data = response.data;
       this.setState({
@@ -23,16 +23,11 @@ class Home extends Component {
   }
   
   render() {
-    console.log(this.state)
     let categorys = [];
     categorys = this.state.data;
     return (
       <div>
-        {categorys.map((category) =>
-          <div> 
-            <h3>{category.name}</h3>
-          </div>
-        )}
+        <h3>Search </h3>
       </div>
     )
   }
