@@ -5,12 +5,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
-import Home from './components/home/Home'
+
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { routes } from './routes';
+
+import store from './store'
+import HeaderContainer from './components/header/HeaderContainer'
+import Footer from './components/footer/Footer'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Home/>,
-    
+    <div>
+      <Provider store={store}>
+        <Router>
+          <HeaderContainer/>
+          { routes }
+          <Footer />
+        </Router>
+      </Provider>
+    </div>,
     document.body.appendChild(document.createElement('div')),
   )
 })
