@@ -1,0 +1,32 @@
+.logo_profile {
+	width: auto;
+	height: 55px;
+  margin-left: 30px;
+
+}
+
+.row_margin {
+  border-bottom-width: 1px;
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.col_padding {
+  padding: 0px !important;
+}
+
+.container {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.navbar {
+  background-color: rgb(167, 166, 166);
+}
+
+.home_button {
+  margin-left: 30px !important;
+}

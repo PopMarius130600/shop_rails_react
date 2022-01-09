@@ -30,7 +30,6 @@ const mapStateToProps = (store) => {
     const { categories, isFetchingCategories } = store.category;
     const { subCategories, isFetchingSubCategories } = store.sub_category;
     const { error } = store;
-    console.log(categories)
     return {
       categories: categories,
       subCategories: subCategories,
