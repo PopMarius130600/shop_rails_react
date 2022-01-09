@@ -1,31 +1,31 @@
 import React from 'react';
 
-import { Navbar, Container } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
-import ListCategory from './ListCategory'
+import NavBar from './NavBar';
+import logo from '../../../images/logo.png';
+
+import styles from './header.module.css';
 
 export default class Header extends React.Component {
 
   constructor() {
     super();
   }
-
-  render() {
+          
+  render() {  
     const { categories, subCategories } = this.props;
     return (
       <div>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <LinkContainer to="/">
-                <Navbar.Brand>Home</Navbar.Brand>
-            </LinkContainer>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <ListCategory categories={categories} subCategories={subCategories} />
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <Row className={styles.row_margin}> 
+          <Col className={styles.col_padding} xs={4} md={3} lg={2} >
+            <img className={styles.logo_profile} src={logo} />
+          </Col>
+          <Col className={styles.col_padding} xs={8} md={9} lg={10} >
+            <NavBar categories={categories} subCategories={subCategories} />
+          </Col>
+          
+        </Row>
       </div>
     );
   }

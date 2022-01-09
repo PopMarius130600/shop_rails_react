@@ -6,7 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { routes } from './routes';
 
@@ -19,11 +19,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <div>
-      <Provider store={store}>
+      <Provider store={store} >
         <Router>
-          <HeaderContainer/>
-          { routes }
-          <Footer />
+          <div>
+            <HeaderContainer />
+            { routes }
+            <Footer />
+          </div>
         </Router>
       </Provider>
     </div>,

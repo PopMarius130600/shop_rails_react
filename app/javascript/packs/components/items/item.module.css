@@ -1,0 +1,84 @@
+.item {
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.img_card {
+  width: 125px !important;
+  height: 200px !important;
+}
+
+.div {
+  margin-bottom: 300px;
+}
+
+.div_filter {
+  margin-left: 50px;
+  margin-top: 40px;
+  width: 100%;
+  height: 200px;
+}
+
+.title_filter {
+  /* text-align: left; */
+  font-size: 22px;
+  color: rgb(39, 39, 39);
+}
+
+.item_filter  {
+  margin-left: 25px;
+  font-size: 16px;
+  color: black;
+  position: relative;
+}
+
+
+.app {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.app i {
+  font-size: 80px;
+  
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+
+article {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  float: left;
+  box-sizing: border-box;
+}
+
+article div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  transition: .5s ease;
+}
+
+article input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ div {
+  background-color: #4f5050;
+  color: white;
+}

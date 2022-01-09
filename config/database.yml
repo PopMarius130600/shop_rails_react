@@ -1,7 +1,7 @@
 development:
   adapter:    postgresql
   host:       localhost
-  database:   is_development
+  database:   mgyt_development
   timeout:    5432
   encoding:   utf8
   port:       5432
@@ -12,11 +12,10 @@ development:
 test:
   adapter:    postgresql
   host:       localhost
-  database:   is_test
+  database:   mgyt_test
   timeout:    5432
   encoding:   utf8
   port:       5432
   pool:       5
   username:   mariusionutpop
   password:   barcelona
-

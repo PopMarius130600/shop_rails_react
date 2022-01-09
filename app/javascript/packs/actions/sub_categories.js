@@ -32,7 +32,6 @@ const receiveSubCategoriesError = (error) => {
 const geSubCategories = () => {
   return (dispatch) => {
     axios.get("/api/v1/sub_categorys").then( response => {
-      console.log(response)
       dispatch(receiveSubCategories(response.data))
     }).catch(error => {dispatch(receiveSubCategoriesError(error.message))});
   }

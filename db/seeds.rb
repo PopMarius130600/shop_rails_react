@@ -46,3 +46,43 @@ Item.create!(
   stock: "1000",
   gender: "F"
   )
+
+Item.create!(
+  name: "Geaca Blana",
+  description: "Calitate superioare sefule",
+  size: "S",
+  color: "Black",
+  price: "200",
+  stock: "1000",
+  gender: "F"
+  )
+
+Item.create!(
+  name: "Geaca Toamna",
+  description: "Calitate superioare sefule",
+  size: "S",
+  color: "Black",
+  price: "200",
+  stock: "1000",
+  gender: "F"
+  )
+
+Item.create!(
+  name: "Geaca Vara",
+  description: "Calitate superioare sefule",
+  size: "S",
+  color: "Black",
+  price: "200",
+  stock: "1000",
+  gender: "F"
+  )
+
+Item.create!(
+  name: "Geaca Iarna",
+  description: "Calitate superioare sefule",
+  size: "S",
+  color: "Black",
+  price: "200",
+  stock: "1000",
+  gender: "F"
+  )

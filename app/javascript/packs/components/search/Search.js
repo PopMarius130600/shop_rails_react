@@ -10,10 +10,8 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    console.log("category");
 
     axios.get("/api/v1/sub_categorys").then( response => {
-      console.log(response);
       const data = response.data;
       this.setState({
         data: data
