@@ -14,7 +14,11 @@ class ItemsController < ApplicationController
       }, status: :unauthorized
       return
     end
-    render json: item
+
+    render json: {
+      item: ItemSerializer.new(item).attributes
+
+    }.to_json
   end
 
   def search
@@ -26,5 +30,9 @@ class ItemsController < ApplicationController
     item = item.filter_by_price(params[:items][:priceLow], params[:items][:priceHigh]) unless params[:items][:priceLow].blank? || params[:items][:priceHigh].blank?
 
     render json: item
+  end
+
+  def create
+
   end
 end
