@@ -29,12 +29,14 @@ class HeaderContainer extends React.Component {
 const mapStateToProps = (store) => {
     const { categories, isFetchingCategories } = store.category;
     const { subCategories, isFetchingSubCategories } = store.sub_category;
+    const { loggingIn } = store.login;
     const { error } = store;
     return {
       categories: categories,
       subCategories: subCategories,
       isFetchingCategories: isFetchingCategories,
       isFetchingSubCategories: isFetchingSubCategories,
+      loggingIn: loggingIn,
       error: error
     }
 }

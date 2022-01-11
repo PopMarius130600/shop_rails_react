@@ -10,27 +10,23 @@ const LogIn = (props) => {
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
 
-  console.log(props.user);
   const handleSubmit = event => { 
     const user = {
       email: email,
       password: password
     }
     props.getUser(user);
-    console.log(props.user);
-    // navigate("../", { replace: true});
+    navigate("../", { replace: true});
     event.preventDefault();
     event.stopPropagation();
   };
 
   const handleEmail = event => {
     setEmail(event.target.value);
-    console.log(email)
   };
 
   const handlePassword = event => {
     setPassword(event.target.value);
-    console.log(password)
   };
 
   return (

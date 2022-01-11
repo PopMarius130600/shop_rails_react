@@ -12,7 +12,7 @@ export default function ItemCard(props) {
   return (
     <LinkContainer to={`/items/${item.id}`} style={{ width: '18rem', height: '29rem'}}>
       <Card style={{ width: '18rem', height: '29rem', margin: '0rem', padding: '0rem' }}>
-        <Card.Img ClassName={styles.img_card} variant="top" src={geaca} />
+        <Card.Img style={{ width: '17rem', height: '23rem', margin: '2px' }} variant="top" src={item.image} />
         <Card.Body>
           <Card.Title>{item.name}</Card.Title>
           <Card.Text>
