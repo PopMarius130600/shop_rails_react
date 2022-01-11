@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2022_01_11_083546) do
   end
 
   create_table "baskets", force: :cascade do |t|
-    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,7 +62,8 @@ ActiveRecord::Schema.define(version: 2022_01_11_083546) do
 
   create_table "item_lists", force: :cascade do |t|
     t.integer "productCount"
-    t.float "price"
+    t.integer "item_id"
+    t.integer "basket_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
