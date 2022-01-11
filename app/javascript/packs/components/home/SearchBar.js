@@ -8,7 +8,7 @@ const SearchBar = () => {
   const [ searchValue, setSearchValue ] = useState("");
 
   const handleSubmit = event => { 
-    navigate("../items/" + searchValue, { replace: true});
+    navigate("../items/search/" + searchValue, { replace: true});
     event.preventDefault();
     event.stopPropagation();
   };
