@@ -2,7 +2,8 @@ class CreateItemLists < ActiveRecord::Migration[6.1]
   def change
     create_table :item_lists do |t|
       t.integer :productCount
-      t.float :price
+      t.integer :item_id
+      t.integer :basket_id
       t.timestamps
     end
   end

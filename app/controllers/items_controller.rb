@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def index
     render json: Item.all
@@ -20,7 +19,6 @@ class ItemsController < ApplicationController
 
   def search
 
-    item = Item.all
     item = Item.all
     item = item.filter_by_keyword(params[:data][:keyword]) unless params[:data][:keyword].blank?
     item = item.filter_by_color(params[:data][:colors]) unless params[:data][:colors].blank?

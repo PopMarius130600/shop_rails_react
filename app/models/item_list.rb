@@ -1,4 +1,8 @@
 class ItemList < ApplicationRecord
-  has_one :user
-  has_one :item
+  belongs_to :basket
+  belongs_to :item
+
+  def total_price
+    self.productCount * self.item.price
+  end
 end
