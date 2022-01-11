@@ -15,7 +15,7 @@ class ItemListsController < ApplicationController
       @item_list = ItemList.new
       @item_list.basket = current_basket
       @item_list.item = item
-      @item_list.productCount = params[:productCount]
+      @item_list.productCount = 1
     end
 
     # Save and redirect to cart show path

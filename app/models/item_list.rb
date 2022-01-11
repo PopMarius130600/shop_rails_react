@@ -1,5 +1,6 @@
 class ItemList < ApplicationRecord
-  belongs_to :basket
+  belongs_to :basket, optional: :true
+  belongs_to :order, optional: :true
   belongs_to :item
 
   def total_price
