@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default function Basket() {
+export default function Basket(props) {
+  const { itemsBasket } = props;
 
   return <div>
-      <h3>Here is basket</h3>
+      {itemsBasket}
   </div>
 }

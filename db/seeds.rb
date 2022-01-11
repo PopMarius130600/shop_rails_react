@@ -18,17 +18,52 @@ Category.create!(
 
 
 SubCategory.create!(
-  name: "Puffer",
+  name: "Pants",
   category_id: Category.first.id
 )
 
 SubCategory.create!(
-  name: "Jeans",
+  name: "T-Shirts",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Hats",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Shirts",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Coats",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Dresses",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Skirts",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Underwears",
+  category_id: Category.first.id
+)
+
+SubCategory.create!(
+  name: "Accessories",
   category_id: Category.first.id
 )
 
 Item.create!(
-  name: "Blugi",
+  name: "Jeans",
   description: "Calitate superioare sefule",
   size: "M",
   color: "Blue",
@@ -88,6 +123,7 @@ Item.create!(
   )
 
 User.create!(
-  email: "popmariusionut@gmail.com",
-  password: "marius"
+  email: "popmar13@gmail.com",
+  password: "marius",
+  role: "ADMIN"
 )

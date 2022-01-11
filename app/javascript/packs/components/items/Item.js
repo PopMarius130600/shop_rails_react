@@ -8,7 +8,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Filter(props) {
-  const { item } = props;
+  var item;
+  if (props.item.item){
+    item = props.item.item;
+  } else {
+    item = []
+  }
+  console.log(props.item)
+  console.log(item)
   const navigate = useNavigate();
   let id = useParams();
   useEffect(() =>{

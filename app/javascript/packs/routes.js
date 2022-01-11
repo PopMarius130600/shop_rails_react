@@ -7,7 +7,7 @@ import ItemListContainer from './components/items/ItemListContainer'
 import PageNotFound from './components/page_not_found/PageNotFound'
 import ItemContainer from './components/items/ItemContainer'
 import LoginContainer from './components/login/LoginContainer'
-import Basket from './components/basket/Basket'
+import BasketContainer from './components/basket/BasketContainer'
 
 export const routes = (
   <Routes >
@@ -16,7 +16,7 @@ export const routes = (
     <Route path="/sub_categories/:id/items" element={<ItemListContainer />} />
     <Route path="/items/search/:keyword" element={<ItemListContainer />} />
     <Route path="/items/:id" element={<ItemContainer />} />
-    <Route path="/basket" element={<Basket />} />
+    <Route path="/basket" element={<BasketContainer />} />
     <Route path="/login" element={<LoginContainer />} />
     <Route path="*" element={<PageNotFound />} />
   </Routes>

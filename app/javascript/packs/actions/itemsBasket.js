@@ -32,38 +32,25 @@ const receiveItemsBasketError = (error) => {
 const getItemsBasket = () => {
   return (dispatch) => {
     axios.get("/api/v1/basket").then( response => {
-      dispatch(receiveCategories(response.data))
-    }).catch(error => {dispatch(receiveCategoriesError(error.message))});
+      dispatch(receiveItemsBasket(response.data))
+    }).catch(error => {dispatch(receiveItemsBasketError(error.message))});
   }
 }
 
-const fetchCategoryList = () => {
-return (dispatch, getState) => {
-dispatch(requestCategories())
-if (getState().error) {
-return dispatch(clearError())
+const fetchItemsBasket = () => {
+  return (dispatch, getState) => {
+		dispatch(requestItemsBasket())
+		if (getState().error) {
+			return dispatch(clearError())
+		}
+
+    return dispatch(getItemsBasket())
+	}
 }
 
-return dispatch(getCategories())
-}
-}
-
-const shouldFetchCategories = (state) => {
-const {categories} = state.category;
-if (!categories.length) {
-return true;
-} else {
-return false;
-}
-}
-
-export const fetchCategoryListIfNeeded = () => {
-return (dispatch, getState) => {
-if (shouldFetchCategories(getState())) {
-return dispatch(fetchCategoryList())
-} else {
-return Promise.resolve()
-}
-}
+export const fetchItemsBasketIfNeeded = () => {
+	return (dispatch, getState) => {
+    return dispatch(fetchItemsBasket())
+	}
 }
 
