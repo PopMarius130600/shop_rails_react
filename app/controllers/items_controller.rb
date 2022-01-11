@@ -19,9 +19,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    debugger
     item = Item.all
-    item = item.filter_by_keyword(params[:data][:keyword]) unless params[:data][:keyword].blank?
+    item = item.filter_by_keyword(params[:items][:keyword]) unless params[:items][:keyword].blank?
     render json: item
   end
 end

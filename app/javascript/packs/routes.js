@@ -5,14 +5,18 @@ import Home from './components/home/Home'
 import Search from './components/search/Search'
 import ItemListContainer from './components/items/ItemListContainer'
 import PageNotFound from './components/page_not_found/PageNotFound'
+import ItemContainer from './components/items/ItemContainer'
+import LoginContainer from './components/login/LoginContainer'
 
 export const routes = (
   <Routes >
     <Route exact path="/" element={<Home />} />
     <Route path="/profile" element={<Search />} />
     <Route path="/sub_categories/:id/items" element={<ItemListContainer />} />
-    <Route path="/items/:keyword" element={<ItemListContainer />} />
+    <Route path="/items/search/:keyword" element={<ItemListContainer />} />
+    <Route path="/items/:id" element={<ItemContainer />} />
     <Route path="/basket" element={<Search />} />
+    <Route path="/login" element={<LoginContainer />} />
     <Route path="*" element={<PageNotFound />} />
   </Routes>
 );

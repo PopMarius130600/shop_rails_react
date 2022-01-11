@@ -29,12 +29,12 @@ const receiveItemsError = (error) => {
   }
 }
 
-const getItems = (data) => {
+const getItems = (items) => {
   return (dispatch) => {
     axios.post("/api/v1/items/search", { 
-        data,
-        paramsSerializer: function (data) {
-          return jQuery.param(data)
+      items,
+        paramsSerializer: function (items) {
+          return jQuery.param(items)
         }
       }).then( response => {
       dispatch(receiveItems(response.data))

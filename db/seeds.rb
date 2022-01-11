@@ -86,3 +86,8 @@ Item.create!(
   stock: "1000",
   gender: "F"
   )
+
+User.create!(
+  email: "popmariusionut@gmail.com",
+  password: "marius"
+)
