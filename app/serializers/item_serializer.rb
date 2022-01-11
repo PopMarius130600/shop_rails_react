@@ -1,7 +1,7 @@
 class ItemSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
   attributes :id, :name, :description, :size, :color, :price, :stock,
-             :gender, :image
+             :gender, :image , :sub_category
 
 
   def image
@@ -11,4 +11,10 @@ class ItemSerializer < ActiveModel::Serializer
       }
     end
   end
+
+  def sub_category
+    SubCategory.find(object.sub_category_id).name
+  end
+
+
 end

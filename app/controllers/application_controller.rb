@@ -10,13 +10,12 @@ class ApplicationController < ActionController::Base
   def current_basket
 
     if session[:basket_id]
-      print("zzzzzzz")
       basket = Basket.find_by(:id => session[:basket_id])
       if basket.present?
-        print("???????????")
+
         @current_basket = basket
       else
-        print("!!!!!!!!!")
+
         session[:basket_id] = nil
       end
     end
