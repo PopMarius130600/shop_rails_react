@@ -15,10 +15,10 @@ const requestLogin = (user) => {
   }
 }
 
-const successLogin = (item) => {
+const successLogin = (user) => {
   return {
     type: LOGIN_SUCCESS,
-    item: item
+    user: user
   }
 }
 

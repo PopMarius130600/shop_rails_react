@@ -16,6 +16,8 @@ export default function Header(props) {
   const [ render, setRender ] = useState("");
   var loginOrSignout;
 
+  console.log(categories);
+
   const handleSubmit = event => { 
     setRender("");
   };
