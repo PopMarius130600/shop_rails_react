@@ -1,11 +1,17 @@
-import { REQUEST_ITEMS, RECEIVE_ITEMS } from '../actions/actionTypes'
+import { REQUEST_ITEMS, RECEIVE_ITEMS, REQUEST_ITEM, RECEIVE_ITEM } from '../actions/actionTypes'
+import { combineReducers } from 'redux';
 
 const initialItemsState = {
   items: [],
   isFetchingItems: true
 }
 
-export const item = (state = initialItemsState, action) => {
+const initialItemProfileState = {
+	item: {},
+	isFetchingItem: true
+}
+
+const itemList = (state = initialItemsState, action) => {
 	switch(action.type) {
 		
 		case REQUEST_ITEMS:
@@ -17,3 +23,23 @@ export const item = (state = initialItemsState, action) => {
 			return state;
 	}
 }
+
+const itemProfile = (state = initialItemProfileState, action) => {
+	switch(action.type) {
+		
+		case REQUEST_ITEM:
+			return {...state, isFetchingItem: true};
+    case RECEIVE_ITEM:
+      return {...state, item: action.item, isFetchingItem: false}
+
+		default: 
+			return state;
+	}
+}
+
+const item = combineReducers({
+	items: itemList,
+	itemProfile: itemProfile
+})
+
+export default item;

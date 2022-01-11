@@ -19,13 +19,12 @@ class ItemsController < ApplicationController
   end
 
   def search
-
     item = Item.all
     item = Item.all
-    item = item.filter_by_keyword(params[:data][:keyword]) unless params[:data][:keyword].blank?
-    item = item.filter_by_color(params[:data][:colors]) unless params[:data][:colors].blank?
-    item = item.filter_by_size(params[:data][:sizes]) unless params[:data][:sizes].blank?
-    item = item.filter_by_price(params[:data][:priceLow], params[:data][:priceHigh]) unless params[:data][:priceLow].blank? || params[:data][:priceHigh].blank?
+    item = item.filter_by_keyword(params[:items][:keyword]) unless params[:items][:keyword].blank?
+    item = item.filter_by_color(params[:items][:colors]) unless params[:items][:colors].blank?
+    item = item.filter_by_size(params[:items][:sizes]) unless params[:items][:sizes].blank?
+    item = item.filter_by_price(params[:items][:priceLow], params[:items][:priceHigh]) unless params[:items][:priceLow].blank? || params[:items][:priceHigh].blank?
     render json: item
   end
 end
