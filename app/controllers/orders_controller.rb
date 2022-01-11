@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
       item.basket_id = nil
     end
     @order.save
+    OrderMailer.with(order: @order).order_email.deliver_later
     Basket.destroy(session[:basket_id])
     session[:basket_id] = nil
 
