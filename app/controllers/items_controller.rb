@@ -33,6 +33,35 @@ class ItemsController < ApplicationController
   end
 
   def create
+    item = Item.create(item_param)
+    if item.save
+      render json: item
+    else
+      render json: {
+        errors: item.errors.messages
+      }, status: :bad_request
+    end
+  end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_param)
+      render json: item
+    else
+      render json: {
+        errors: item.errors.messages
+      },status: :bad_request
+    end
+  end
+
+  private
+
+  def item_param
+    params.permit(:name, :description , :size, :color, :price, :stock, :gender, :image)
   end
 end
