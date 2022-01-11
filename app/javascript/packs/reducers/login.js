@@ -2,7 +2,8 @@ import React from 'react';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/actionTypes'
 
 const initialState = {
-  user: {},
+  id: {},
+  email: {},
   loggedIn: false,
   loggingIn: false
 };
@@ -12,12 +13,14 @@ export function login(state = initialState, action) {
     case LOGIN_REQUEST:
       return {
           loggingIn: true,
-          user: action.user
+          email: action.email,
+          id: action.id
       };
     case LOGIN_SUCCESS:
       return {
-          loggedIn: true,
-          user: action.user
+        loggingIn: true,
+        email: action.email,
+        id: action.id
       };
     case LOGIN_FAILURE:
       return {};
