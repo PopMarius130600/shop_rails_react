@@ -8,6 +8,7 @@ import PageNotFound from './components/page_not_found/PageNotFound'
 import ItemContainer from './components/items/ItemContainer'
 import LoginContainer from './components/login/LoginContainer'
 import BasketContainer from './components/basket/BasketContainer'
+import SignupContainer from './components/signup/SignupContainer'
 
 export const routes = (
   <Routes >
@@ -18,6 +19,7 @@ export const routes = (
     <Route path="/items/:id" element={<ItemContainer />} />
     <Route path="/basket" element={<BasketContainer />} />
     <Route path="/login" element={<LoginContainer />} />
+    <Route path="/signup" element={<SignupContainer />} />
     <Route path="*" element={<PageNotFound />} />
   </Routes>
 );

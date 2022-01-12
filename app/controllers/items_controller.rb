@@ -28,8 +28,7 @@ class ItemsController < ApplicationController
     item = item.filter_by_color(params[:items][:colors]) unless params[:items][:colors].blank?
     item = item.filter_by_size(params[:items][:sizes]) unless params[:items][:sizes].blank?
     item = item.filter_by_price(params[:items][:priceLow], params[:items][:priceHigh]) unless params[:items][:priceLow].blank? || params[:items][:priceHigh].blank?
-    item = item.find(params[:items][:id]) unless params[:items][:id].blank?
-    item = item.filter_by_subcategory(params[:items][:subCategoryId]) unless params[:items][:subCategoryId].blank?
+    item = item.filter_by_subcategory(params[:items][:id]) unless params[:items][:id].blank?
 
     render json: item
   end

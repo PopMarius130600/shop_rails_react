@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchCategoryListIfNeeded } from '../../actions/categories';
 import { fetchSubCategoryListIfNeeded } from '../../actions/sub_categories';
+import { logoutUser } from '../../actions/logins';
 
 import Header from './Header'
 import ErrorComponent from '../error/ErrorComponent'
@@ -46,6 +47,9 @@ const mapDispatchToProps = (dispatch) => {
     getCategories: () => {
       dispatch(fetchCategoryListIfNeeded())
       dispatch(fetchSubCategoryListIfNeeded())
+    },
+    logoutUser: () => {
+      dispatch(logoutUser())
     }
   }
 }

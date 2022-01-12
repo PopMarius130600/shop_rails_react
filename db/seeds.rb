@@ -69,7 +69,8 @@ Item.create!(
   color: "Blue",
   price: "126",
   stock: "1000",
-  gender: "M"
+  gender: "M",
+  sub_category_id: Category.first.id
 )
 
 Item.create!(
@@ -79,7 +80,8 @@ Item.create!(
   color: "Black",
   price: "200",
   stock: "1000",
-  gender: "F"
+  gender: "F",
+  sub_category_id: Category.first.id
   )
 
 Item.create!(
@@ -89,7 +91,8 @@ Item.create!(
   color: "Black",
   price: "200",
   stock: "1000",
-  gender: "F"
+  gender: "F",
+  sub_category_id: Category.first.id
   )
 
 Item.create!(
@@ -99,7 +102,8 @@ Item.create!(
   color: "Black",
   price: "200",
   stock: "1000",
-  gender: "F"
+  gender: "F",
+  sub_category_id: Category.first.id
   )
 
 Item.create!(
@@ -109,7 +113,8 @@ Item.create!(
   color: "Black",
   price: "200",
   stock: "1000",
-  gender: "F"
+  gender: "F",
+  sub_category_id: Category.first.id
   )
 
 Item.create!(
@@ -119,7 +124,8 @@ Item.create!(
   color: "Black",
   price: "200",
   stock: "1000",
-  gender: "F"
+  gender: "F",
+  sub_category_id: Category.first.id
   )
 
 User.create!(

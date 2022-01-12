@@ -11,8 +11,9 @@ export const basket = (state = initialItemsBasketState, action) => {
 		case REQUEST_ITEMS_BASKET:
 			return {...state, isFetchingItemsBasket: true};
     case RECEIVE_ITEMS_BASKET:
+			console.log(action.itemsBasket)
       return {...state, itemsBasket: action.itemsBasket, isFetchingItemsBasket: false}
-
+			
 		default: 
 			return state;
 	}

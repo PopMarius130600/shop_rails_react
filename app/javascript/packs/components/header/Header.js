@@ -16,15 +16,25 @@ export default function Header(props) {
   const [ render, setRender ] = useState("");
   var loginOrSignout;
 
-  console.log(categories);
 
   const handleSubmit = event => { 
     setRender("");
   };
 
-  console.log(loggingIn);
+  const handleLogout = event => { 
+    console.log("Logout")
+    // props.logoutUser();
+    window.location.reload();
+    setRender("");
+  };
+  
+  const basket = <Col>
+                    <LinkContainer to="/basket">
+                      <h6>Basket</h6>
+                    </LinkContainer>
+                  </Col>
   if(loggingIn != true) {
-    loginOrSignout =  <Col xs={4} md={3} lg={2}>
+    loginOrSignout =  <Col xs={4} md={3} lg={2} style={{ marginTop: '1rem', padding: '0rem' }}>
                         <Row>
                           <Col>
                             <LinkContainer to="/login" onClick={handleSubmit}>
@@ -36,31 +46,23 @@ export default function Header(props) {
                               <h6>SignUp</h6>
                             </LinkContainer>
                           </Col>
-                          <Col>
-                            <LinkContainer to="/basket">
-                              <h6>Basket</h6>
-                            </LinkContainer>
-                          </Col>
+                          {basket}
                         </Row>
                       </Col>
   } else {
-    loginOrSignout= <Col xs={4} md={3} lg={2}>
+    loginOrSignout= <Col xs={4} md={3} lg={2} style={{marginTop: '1rem', padding: '0rem' }}>
                       <Row>
                         <Col>
-                          <LinkContainer to="/login" onClick={handleSubmit}>
-                            <h6>SignUp</h6>
-                          </LinkContainer>
+                          <button onClick={handleLogout}>
+                            <h6>Logout</h6>
+                          </button>
                         </Col>
                         <Col>
                           <LinkContainer to="/signup" onClick={handleSubmit}>
                             <h6>Profile</h6>
                           </LinkContainer>
                         </Col>
-                        <Col>
-                            <LinkContainer to="/basket">
-                              <h6>Basket</h6>
-                            </LinkContainer>
-                          </Col>
+                        {basket}
                       </Row>
                     </Col>
   }

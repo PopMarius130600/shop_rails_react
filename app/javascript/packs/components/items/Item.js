@@ -14,8 +14,7 @@ export default function Filter(props) {
   } else {
     item = []
   }
-  console.log(props.item)
-  console.log(item)
+
   const navigate = useNavigate();
   let id = useParams();
   useEffect(() =>{
@@ -23,12 +22,13 @@ export default function Filter(props) {
   }, [])
 
   const handleAddToBasket = event => {
-    
+    console.log(id)
+    props.addItemToBasket(id)
   };
 
 
   return (
-    <div>
+    <div style={{paddingBottom: '150px'}}>
       <Row style={{alignItems: 'right'}}>
         <Col xs={4} md={3} style={{  margin: '0rem', padding: '5rem' }}>
           <Row>

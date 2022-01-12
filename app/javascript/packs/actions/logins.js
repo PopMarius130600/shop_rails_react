@@ -1,4 +1,5 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, CLEAR_ERROR} from './actionTypes';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE,
+  LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAILURE, CLEAR_ERROR} from './actionTypes';
 
 import axios from 'axios';
 
@@ -56,6 +57,51 @@ export const fetchUser = (user) => {
       return dispatch(clearError())
     }
     return dispatch(getUser(user))
+  }
+}
+
+
+
+const requestLogout = () => {
+  return {
+    type: LOGOUT_REQUEST
+  }
+}
+
+const successLogout = () => {
+  return {
+    type: LOGOUT_SUCCESS
+  }
+}
+
+const failureLogout = (error) => {
+  return {
+    type: LOGOUT_FAILURE,
+    error: error
+  }
+}
+
+const logout = () => {
+  const token = document.querySelector('meta[name="csrf-token"]').content;
+  return (dispatch) => {
+    axios.delete("/api/v1/logout",{ 
+        headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      }}
+    ).then( response => {
+      dispatch(successLogout())
+    }).catch(error => {dispatch(failureLogout(error.message))});
+  }
+}
+
+export const logoutUser = () => {
+  return (dispatch, getState) => {
+    dispatch(requestLogout())
+    if (getState().error) {
+      return dispatch(clearError())
+    }
+    return dispatch(logout())
   }
 }
 

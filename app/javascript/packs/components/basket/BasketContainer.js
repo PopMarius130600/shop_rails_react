@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchItemsBasketIfNeeded } from '../../actions/itemsBasket';
+import { addItemToBasket, removeItemToBasket, deleteItemToBasket} from '../../actions/listBasket';
 
 import Basket from './Basket'
 import ErrorComponent from '../error/ErrorComponent'
@@ -9,7 +10,6 @@ import Spinner from '../spinner/Spinner';
 
 class BasketContainer extends React.Component {
   componentDidMount() {
-    console.log("HEI")
     this.props.getItemsBasket();
   }
 
@@ -42,6 +42,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getItemsBasket: () => {
       dispatch(fetchItemsBasketIfNeeded())
+    },
+    addItemToBasket: id => {
+      dispatch(addItemToBasket(id))
+    },
+    removeItemToBasket: id => {
+      dispatch(removeItemToBasket(id))
+    },
+    deleteItemToBasket: id => {
+      dispatch(deleteItemToBasket(id))
     }
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchItemProfileIfNeeded } from '../../actions/item';
+import { addItemToBasket } from '../../actions/listBasket';
 
 import Item from './Item'
 import ErrorComponent from '../error/ErrorComponent'
@@ -35,6 +36,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getItem: id => {
       dispatch(fetchItemProfileIfNeeded(id))
+    },
+    addItemToBasket: id => {
+      dispatch(addItemToBasket(id))
     }
   }
 }
