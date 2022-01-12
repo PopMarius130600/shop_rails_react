@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :sub_categorys
       resources :items
       resources :orders
+      resources :users
 
     end
   end
