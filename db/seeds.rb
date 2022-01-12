@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.delete_all
+SubCategory.delete_all
+Item.delete_all
+User.delete_all
+
 Category.create!(
   name: "Man"
 )
@@ -20,6 +25,10 @@ Category.create!(
 SubCategory.create!(
   name: "Pants",
   category_id: Category.first.id
+)
+SubCategory.create!(
+  name: "Coats",
+  category_id: Category.second.id
 )
 
 SubCategory.create!(
@@ -62,6 +71,50 @@ SubCategory.create!(
   category_id: Category.first.id
 )
 
+#womans
+
+SubCategory.create!(
+  name: "Pants",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "T-Shirts",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "Hats",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "Shirts",
+  category_id: Category.second.id
+)
+
+
+
+SubCategory.create!(
+  name: "Dresses",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "Skirts",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "Underwears",
+  category_id: Category.second.id
+)
+
+SubCategory.create!(
+  name: "Accessories",
+  category_id: Category.second.id
+)
+
 Item.create!(
   name: "Jeans",
   description: "Calitate superioare sefule",
@@ -70,7 +123,7 @@ Item.create!(
   price: "126",
   stock: "1000",
   gender: "M",
-  sub_category_id: Category.first.id
+  sub_category_id: SubCategory.first.id
 )
 
 Item.create!(
@@ -81,8 +134,9 @@ Item.create!(
   price: "200",
   stock: "1000",
   gender: "F",
-  sub_category_id: Category.first.id
-  )
+  sub_category_id: SubCategory.second.id
+
+)
 
 Item.create!(
   name: "Geaca Blana",
@@ -92,8 +146,9 @@ Item.create!(
   price: "200",
   stock: "1000",
   gender: "F",
-  sub_category_id: Category.first.id
-  )
+  sub_category_id: SubCategory.second.id
+
+)
 
 Item.create!(
   name: "Geaca Toamna",
@@ -103,8 +158,9 @@ Item.create!(
   price: "200",
   stock: "1000",
   gender: "F",
-  sub_category_id: Category.first.id
-  )
+  sub_category_id: SubCategory.second.id
+
+)
 
 Item.create!(
   name: "Geaca Vara",
@@ -114,8 +170,9 @@ Item.create!(
   price: "200",
   stock: "1000",
   gender: "F",
-  sub_category_id: Category.first.id
-  )
+  sub_category_id: SubCategory.second.id
+
+)
 
 Item.create!(
   name: "Geaca Iarna",
@@ -125,8 +182,18 @@ Item.create!(
   price: "200",
   stock: "1000",
   gender: "F",
-  sub_category_id: Category.first.id
-  )
+  sub_category_id: SubCategory.second.id
+
+)
+
+i = Item.first
+i.image.attach(io: File.open("/Users/andreitibrea/environment/shop/shop_rails_react/app/assets/images/blugi.jpeg"), filename: "blugi.jpeg")
+i = Item.second
+i.image.attach(io: File.open("/Users/andreitibrea/environment/shop/shop_rails_react/app/assets/images/geaca-neagra.jpeg"), filename: "geaca-neagra.jpeg")
+i = Item.third
+i.image.attach(io: File.open("/Users/andreitibrea/environment/shop/shop_rails_react/app/assets/images/geaca-blana.jpeg"), filename: "geaca-blana.jpeg")
+i = Item.fourth
+i.image.attach(io: File.open("/Users/andreitibrea/environment/shop/shop_rails_react/app/assets/images/geaca-toamna.jpeg"), filename: "geaca-toamna.jpeg")
 
 User.create!(
   email: "popmar13@gmail.com",

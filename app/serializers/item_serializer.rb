@@ -13,7 +13,9 @@ class ItemSerializer < ActiveModel::Serializer
   end
 
   def sub_category
-    SubCategory.find(object.sub_category_id).name
+    unless object.sub_category_id.blank?
+      SubCategory.find(object.sub_category_id).name
+    end
   end
 
 
